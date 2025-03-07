@@ -1,0 +1,19 @@
+name: Hello trigger pipeline
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+jobs:
+  my_job:
+    name: Triggering the pipeline
+    runs-on: ubuntu-22.04
+    steps:
+    - name: checkout the code
+    - uses: actions/checkout@v4
+    - name: Just chill and enjoy folks!!
+      run: echo " just chill and enjoy learnung"
+    - name: this is literal block
+      run: |
+       echo "touch file.txt"
+       echo " ls-lhrt"

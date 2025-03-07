@@ -5,7 +5,7 @@ on:
     branches:
     - main
 jobs:
-  my_job:
+  myjob:
     name: Triggering the pipeline
     runs-on: ubuntu-22.04
     steps:

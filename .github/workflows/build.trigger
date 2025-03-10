@@ -6,4 +6,4 @@ on:
 jobs:
     - job: Build
       steps:
-       run: echo "build is done"
+      - run: echo "build is done"

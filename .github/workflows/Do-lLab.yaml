@@ -1,0 +1,26 @@
+name: Perform Lab
+on:
+  workflow_dispatch:
+    inputs:
+      training:
+        default: "Deploy my k8ss_cluster"
+        description: K8s-cluster
+        type: choice
+        options:
+          - Dev
+          - Sit
+          - Uat
+          - prod
+env:
+  TRAINING: ${{ inputs.training }}  # global variable available to all jobs
+jobs:
+  hello:
+    name: Deploying in k8s_cluster   
+    runs-on: ubuntu-latest 
+    env:
+      NAME: "selected env for deploying"  # local variable available to this job only 
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: Deploying an application
+        run: echo "Hello $NAME! this is my $TRAINING training"

@@ -23,4 +23,4 @@ jobs:
       - name: check out the code
         uses: actions/checkout@v4
       - name: Deploying an application
-        run: echo "Hello $NAME! this is my $TRAINING training"
+        run: echo "Hello $NAME! this is on $TRAINING training"

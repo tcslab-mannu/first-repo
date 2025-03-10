@@ -1,0 +1,25 @@
+name: Lab Assigment
+on:
+  workflow_dispatch:
+env:
+  JAVA_VERSION: "17"  # global variable available to all jobs
+jobs:
+  build:
+    name: building the application 
+    runs-on: ubuntu-latest 
+    env:
+      APP_NAME: "Manu"  # local variable available to this job only 
+      
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: Building an application
+        run: echo "Hello settitng up the java version as $ JAVA_VERSION! "
+  Deployment:
+    name: Performing deployment 
+    env: 
+      APP_NAME: "Doker name"  # local variable available to this job only 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Deploying an applciation
+        run: echo "Hello $APP_NAME! " 

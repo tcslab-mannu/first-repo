@@ -1,9 +1,9 @@
 name: build pipeline
+on:
  pull_request:
     types:
       - closed
-    jos:
+jobs:
     - job: Build
-      Displayname: "build job"
       steps:
        run: echo "build is done"
